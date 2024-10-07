@@ -11,20 +11,11 @@ Output :- ["NLP","is","EASY"]
 
 #CODE
 def tokenize(s = str()):
-    return s.split(" ")
-data = tokenize("NLP is easy")
-print(data)
-
-#ANOTHER OPTION
-def tokenize(s = str()):
-    l = list()
-    pointer = 0
-    for i in range(len(s)):
-        if s[i] == " " :
-            l.append(s[pointer:i])
-            pointer = i+1
-    l.append(s[pointer:])
-    return l
+    List = s.split(" ")
+    List = [""]+List
+    Keys = [i for i in range(len(List))]
+    List = dict(zip( Keys, List ))
+    return List
 data = tokenize("NLP is easy")
 print(data)
 
